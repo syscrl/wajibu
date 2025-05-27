@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Wajibu</title>
+  <link href="/frontend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/frontend/assets/style.css" rel="stylesheet">
+</head>
+
+<body class="login-page">
+  <div class="card">
+    <h2>Login to Your Account</h2>
+    <p>Enter your username & password to login</p>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <p class="text-center">Don't have an account? <a href="register.html">Create an account</a></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<script src="../assets/firebase-global.js"></script> 
+  <script>
+    const loginForm = document.getElementById('loginForm');
+
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  console.log("Login attempt:", username, password); // Debugging
+
+  firebase.auth().signInWithEmailAndPassword(username + "@example.com", password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log("Login successful:", user); // Debugging
+      window.location.href = 'dashboard.html';
+    })
+    .catch((error) => {
+      console.error("Login failed:", error); // Debugging
+      alert('Login failed: ' + error.message);
+    });
+});
+  </script>
+  <script src="/frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

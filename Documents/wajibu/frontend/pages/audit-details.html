@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wajibu | Audit Details</title>
+  <link href="/frontend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/frontend/assets/style.css" rel="stylesheet" />
+</head>
+<body>
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h2 id="audit-title" class="mb-3">Loading...</h2>
+        <small class="text-muted d-block mb-2" id="audit-status"></small>
+        
+        <!-- Image Gallery -->
+        <div id="audit-gallery" class="row g-2 mb-3"></div>
+
+        <!-- Description -->
+        <div id="audit-desc" class="mb-4"></div>
+
+        <!-- Quotes -->
+        <div id="audit-quotes" class="border-start ps-3 mb-4 text-muted fst-italic"></div>
+
+        <!-- Documents -->
+        <div id="audit-docs" class="mb-4"></div>
+
+        <!-- Comments -->
+<div class="mb-5">
+    <h5>User Comments</h5>
+    <ul id="comments-list" class="list-group mb-3"></ul>
+    
+    <form id="comment-form">
+      <textarea id="comment-text" class="form-control mb-2" placeholder="Write a comment" required></textarea>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>  
+      </div>
+    </div>
+
+    <!-- Login Box -->
+<div id="login-box" class="mb-4">
+    <h5 class="mb-2">Login to Comment</h5>
+    <form id="login-form">
+      <input type="email" id="login-email" class="form-control mb-2" placeholder="Email" required />
+      <input type="password" id="login-password" class="form-control mb-2" placeholder="Password" required />
+      <button type="submit" class="btn btn-sm btn-primary">Login</button>
+    </form>
+  </div>
+  
+  <!-- Comment Form (hidden unless logged in) -->
+  <form id="comment-form" class="d-none mb-4">
+    <h5 class="mb-2">Post a Comment</h5>
+    <textarea id="comment-text" class="form-control mb-2" placeholder="Your comment..." rows="3" required></textarea>
+    <button type="submit" class="btn btn-sm btn-success">Post</button>
+  </form>
+  
+  <!-- Comments List -->
+  <ul id="comments-list" class="list-group mb-4"></ul>  
+
+    <script type="module">
+        import { auth } from '../assets/js/firebase.js';
+        import { postComment, fetchComments } from '../assets/js/comment-api.js';
+        import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+      
+        const auditId = new URLSearchParams(window.location.search).get("id");
+        const commentForm = document.getElementById("comment-form");
+        const commentList = document.getElementById("comments-list");
+        const commentText = document.getElementById("comment-text");
+        const loginSection = document.getElementById("login-box");
+      
+        // Auth check
+        let currentUser = null;
+      
+        onAuthStateChanged(auth, user => {
+          currentUser = user;
+          if (user) {
+            commentForm.classList.remove("d-none");
+            loginSection.classList.add("d-none");
+          } else {
+            commentForm.classList.add("d-none");
+            loginSection.classList.remove("d-none");
+          }
+        });
+      
+        // Fetch & display comments
+        async function loadComments() {
+          const comments = await fetchComments(auditId);
+          commentList.innerHTML = "";
+          comments.forEach(c => {
+            const item = document.createElement("li");
+            item.className = "list-group-item";
+            item.innerHTML = `<strong>${c.name}</strong>: ${c.text}`;
+            commentList.appendChild(item);
+          });
+        }
+      
+        // Submit comment
+        commentForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const name = currentUser.displayName || currentUser.email;
+          const text = commentText.value.trim();
+          if (!text) return;
+      
+          await postComment(auditId, name, text);
+          commentText.value = "";
+          await loadComments();
+        });
+      
+        // Login
+        document.getElementById("login-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const email = document.getElementById("login-email").value;
+          const password = document.getElementById("login-password").value;
+          await signInWithEmailAndPassword(auth, email, password);
+        });
+      
+        const userEmail = currentUser?.email;
+
+comments.forEach((c, i) => {
+  const item = document.createElement("li");
+  item.className = "list-group-item d-flex justify-content-between align-items-start";
+  item.innerHTML = `
+    <div>
+      <strong>${c.name}</strong>: ${c.text}
+    </div>
+    ${
+      userEmail === 'admin1@wajibu.org' || userEmail === 'admin2@wajibu.org'
+      ? `<button class="btn btn-sm btn-outline-danger" onclick="deleteAuditComment('${c.id}')">Delete</button>`
+      : ''
+    }
+  `;
+  commentList.appendChild(item);
+});
+
+        loadComments();
+      </script>
+      
+  </main>
+
+</body>
+</html>

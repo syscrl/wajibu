@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "School Rebuild – Kisumu County",
+    "image": "assets/images/audits/school-project.png",
+    "status": "Verified",
+    "statusClass": "success",
+    "summary": "A community audit revealed 80% of the school project was completed.",
+    "description": [
+      "Photos were submitted by locals showing construction progress.",
+      "The audit confirmed appropriate use of materials and timelines.",
+      "Remaining 20% flagged for follow-up by the county education office."
+    ],
+    "gallery": [
+      "assets/images/audits/school-1.png",
+      "assets/images/audits/school-2.png"
+    ],
+    "documents": [
+      {
+        "label": "Audit Summary Report (PDF)",
+        "link": "assets/docs/kisumu-audit-report.pdf"
+      }
+    ],
+    "quotes": [
+      "“This school was once abandoned. Today, my daughter studies here.” – Amina, parent",
+      "“Wajibu’s audit helped us push the local leaders into action.” – Eric, civic volunteer"
+    ]
+  }
+]

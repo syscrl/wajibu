@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Community-Powered Audits",
+      "description": "Citizens verify local projects like school construction and road repairs, ensuring transparency and reporting fraud in real time.",
+      "icon": "bi bi-check-circle text-success",
+      "link": "audit-details.html"
+    },
+    {
+      "title": "Live Government Scorecards",
+      "description": "Real-time performance ratings based on citizen feedback, budget use, and project delivery timelines. No spin, just facts.",
+      "icon": "bi bi-graph-up text-primary",
+      "link": "scorecards.html"
+    },
+    {
+      "title": "Inclusive Civic Education",
+      "description": "From guides to webinars and digital badges, we equip Kenyans with tools to know their rights and act on them.",
+      "icon": "bi bi-people text-warning",
+      "link": "civic-education.html"
+    },
+    {
+      "title": "Impactful Campaigns & Petitions",
+      "description": "From halting illegal evictions to exposing misuse of funds, our community-led petitions make news — and drive change.",
+      "icon": "bi bi-megaphone text-danger",
+      "link": "petitions.html"
+    }
+  ]
+  

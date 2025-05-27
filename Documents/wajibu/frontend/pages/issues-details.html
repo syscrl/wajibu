@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue Details - Wajibu</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/style.css" rel="stylesheet">
+</head>
+
+<body class="issues-details-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Wajibu</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="issues.html" class="active">Issues</a></li>
+          <li><a href="petitions.html">Petitions</a></li>
+          <li><a href="scorecards.html">Scorecards</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section" style="background-image: url('assets/img/civic-participation.jpg');">
+    <div class="container text-center" data-aos="fade-up">
+      <h1>Issue Details</h1>
+      <p>Learn more about the reported issue and its progress.</p>
+    </div>
+  </section>
+
+  <!-- Issue Details Section -->
+  <section id="issue-details" class="section">
+    <div class="container">
+      <div class="section-title text-center" data-aos="fade-up">
+        <h2>Issue Details</h2>
+        <p>Details of the selected issue are displayed below.</p>
+      </div>
+      <div id="issueDetails" class="card" data-aos="fade-up">
+        <div class="card-body">
+          <h5 class="card-title" id="issueTitle">Loading...</h5>
+          <p class="card-text" id="issueDescription"></p>
+          <p class="text-muted"><strong>Location:</strong> <span id="issueLocation"></span></p>
+          <p class="text-muted"><strong>Category:</strong> <span id="issueCategory"></span></p>
+          <p class="text-muted"><strong>Status:</strong> <span id="issueStatus"></span></p>
+          <p class="text-muted"><strong>Created At:</strong> <span id="issueCreatedAt"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <h4>About Wajibu</h4>
+          <p>Empowering communities to take civic action and improve governance.</p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="issues.html">Issues</a></li>
+            <li><a href="petitions.html">Petitions</a></li>
+            <li><a href="scorecards.html">Scorecards</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h4>Contact</h4>
+          <p>Email: futurelocked52@gmail.com</p>
+          <p>Phone: +254 700 000 000</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/issues-details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wajibu | News Details</title>
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ======= Header (optional, reuse site nav if needed) ======= -->
+  <header class="bg-primary text-white p-3">
+    <div class="container">
+      <h1 class="mb-0">News Details</h1>
+    </div>
+  </header>
+
+  <!-- ======= News Details Section ======= -->
+  <main class="container my-5">
+    <div id="news-detail" class="row justify-content-center">
+      <div class="col-lg-10">
+        <img id="news-img" src="" class="img-fluid mb-4 rounded" alt="News Image" />
+        <small class="text-muted d-block mb-2" id="news-meta"></small>
+        <h2 id="news-title" class="mb-3">Loading title...</h2>
+        <div id="news-content" class="lead"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======= Footer (optional) ======= -->
+  <footer class="text-center bg-light py-3">
+    <small>&copy; 2025 Wajibu. All rights reserved.</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const articleId = params.get("id");
+
+    fetch("../assets/data/news.json")
+      .then(response => response.json())
+      .then(data => {
+        const article = data.find(item => item.id === articleId);
+
+        if (!article) {
+          document.getElementById("news-detail").innerHTML = "<p>Article not found.</p>";
+          return;
+        }
+
+        document.getElementById("news-img").src = "../" + article.image;
+        document.getElementById("news-title").textContent = article.title;
+
+        const date = new Date(article.date).toLocaleDateString("en-GB", {
+          day: '2-digit', month: 'short', year: 'numeric'
+        });
+        document.getElementById("news-meta").textContent = `${date} — ${article.category}`;
+
+        const contentHtml = article.content.map(p => `<p>${p}</p>`).join("");
+        document.getElementById("news-content").innerHTML = contentHtml;
+      })
+      .catch(error => {
+        console.error("Error loading article:", error);
+        document.getElementById("news-detail").innerHTML = "<p>Failed to load article.</p>";
+      });
+  </script>
+
+</body>
+</html>

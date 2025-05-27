@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "Potholes on Main Street",
+    "description": "Large potholes causing traffic issues.",
+    "location": "Main Street, Nairobi",
+    "category": "infrastructure",
+    "status": "open",
+    "createdAt": "2025-04-01T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Water Shortage in Westlands",
+    "description": "Residents have been without water for 3 days.",
+    "location": "Westlands, Nairobi",
+    "category": "health",
+    "status": "in-progress",
+    "createdAt": "2025-04-02T12:00:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Streetlights Not Working",
+    "description": "Streetlights on 5th Avenue are not functioning.",
+    "location": "5th Avenue, Nairobi",
+    "category": "governance",
+    "status": "resolved",
+    "createdAt": "2025-03-30T08:00:00Z"
+  }
+] 

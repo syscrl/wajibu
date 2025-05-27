@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Logis Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/frontend/assets/style.css" rel="stylesheet">
+
+  <!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Wajibu </h1>
+      </a>
+
+      <div id="petitionGrid" class="row"></div>
+
+      <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+        <img src="assets/img/world-dotted-map.png" alt="" class="hero-bg" data-aos="fade-in">
+      
+        <div class="container">
+          <div class="row gy-4 d-flex justify-content-between">
+            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+              <h2 data-aos="fade-up">Raise Your Voice. Demand Change.</h2>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Wajibu Petitions is your civic megaphone. Start or sign petitions that matter to your community—from fixing broken infrastructure to advocating for better governance. Your voice can influence real action.
+              </p>
+      
+              <form action="#create-petition" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+                <input type="text" class="form-control" placeholder="Search for petitions...">
+                <button type="submit" class="btn btn-warning">Search</button>
+              </form>
+      
+              <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
+      
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="2340" data-purecounter-duration="1">0</span>
+                    <p>Petitions Created</p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1100000" data-purecounter-duration="1">0</span>
+                    <p>Signatures Collected</p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="820" data-purecounter-duration="1">0</span>
+                    <p>Petitions Resolved</p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="47" data-purecounter-duration="1">0</span>
+                    <p>Counties Engaged</p>
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+      
+            <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+              <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="Citizens raising their voices">
+            </div>
+          </div>
+        </div>
+      
+      </section>
+      <!-- /Hero Section -->    
+
+    <!-- Top Petitions Section -->
+<section id="featured-petitions" class="featured-services section">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Top Petitions</h2>
+      <p>These are some of the most supported and urgent petitions on Wajibu. Add your voice to make an impact.</p>
+    </div>
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon flex-shrink-0"><i class="bi bi-megaphone-fill"></i></div>
+        <div>
+          <h4 class="title">Restore Clean Water in Turkana</h4>
+          <p class="description">Demand urgent action to repair broken boreholes and improve access to safe water for thousands of residents.</p>
+          <a href="#" class="readmore stretched-link"><span>Sign Now</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon flex-shrink-0"><i class="bi bi-buildings-fill"></i></div>
+        <div>
+          <h4 class="title">Audit Road Funds in Nairobi</h4>
+          <p class="description">Call for transparency in how road construction budgets are used across Nairobi’s sub-counties.</p>
+          <a href="#" class="readmore stretched-link"><span>Sign Now</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon flex-shrink-0"><i class="bi bi-shield-lock-fill"></i></div>
+        <div>
+          <h4 class="title">End Police Harassment in Matatu Stops</h4>
+          <p class="description">Join the call to investigate and stop extortion and harassment of commuters by law enforcement.</p>
+          <a href="#" class="readmore stretched-link"><span>Sign Now</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Top Petitions Section -->
+
+<!-- Why Petitions Matter Section -->
+<section id="about" class="about section">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
+        <img src="assets/img/petition-action.jpg" class="img-fluid" alt="Civic Action">
+        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn" title="Watch how citizen petitions change lives"></a>
+      </div>
+
+      <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
+        <h3>Why Petitions Matter</h3>
+        <p>
+          Wajibu empowers every Kenyan to initiate change. Whether you're fighting for better roads, cleaner water, or equal rights—your voice, backed by your community, can push the government to act.
+        </p>
+        <ul>
+          <li>
+            <i class="bi bi-diagram-3"></i>
+            <div>
+              <h5>Community-Led Change</h5>
+              <p>When one person speaks, it's a whisper. When a community unites behind a petition, it's a roar that gets attention.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-bar-chart"></i>
+            <div>
+              <h5>Trackable Civic Impact</h5>
+              <p>Every petition signed and shared is recorded. You’ll know what action was taken—and by whom.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-check2-circle"></i>
+            <div>
+              <h5>Real Government Responses</h5>
+              <p>Top-voted petitions are sent directly to relevant officials, and we hold them accountable for their responses.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Why Petitions Matter Section -->
+
+<!-- Petitions Section -->
+<section id="explore-petitions" class="services section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <span>Explore Petitions</span>
+      <h2>Recent Petitions</h2>
+      <p>Browse and support the latest petitions from your community.</p>
+    </div>
+
+    <div class="row gy-4" id="petitionGrid">
+      <!-- Cards will be dynamically inserted here -->
+    </div>
+  </div>
+</section>
+<!-- End Petitions Section -->
+
+    <!-- Call To Action Section -->
+<section id="create-petition" class="call-to-action section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Create a Petition</h2>
+      <p>Have an issue that needs attention? Start a petition and rally support from your community.</p>
+    </div>
+
+    <form id="createPetitionForm" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <input type="text" name="title" id="petitionTitle" class="form-control" placeholder="Petition Title" required>
+        </div>
+        <div class="col-md-6">
+          <input type="url" name="image" id="petitionImage" class="form-control" placeholder="Image URL (optional)">
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <textarea name="description" id="petitionDescription" rows="5" class="form-control" placeholder="Petition Description" required></textarea>
+      </div>
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary">Submit Petition</button>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- End Create Petition Section -->
+
+<!-- Petition Detail Modal -->
+<div class="modal fade" id="petitionDetailModal" tabindex="-1" aria-labelledby="petitionDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="petitionDetailModalLabel">Petition Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 id="modalPetitionTitle"></h3>
+        <img id="modalPetitionImage" src="" alt="Petition Image" class="img-fluid mb-3">
+        <p id="modalPetitionDescription"></p>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <button id="signPetitionBtn" class="btn btn-success">Sign This Petition</button>
+          <span id="modalSignaturesCount" class="badge bg-secondary">0 signatures</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Petition Detail Modal -->
+
+<!-- Loading Spinner -->
+<div id="loadingSpinner" class="d-none">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<!-- End Loading Spinner -->
+
+<!-- Toast Notification -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Action completed successfully!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+<!-- End Toast Notification -->
+
+<!-- Footer -->
+<footer id="footer" class="footer dark-background">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">Wajibu</span>
+        </a>
+        <p>Empowering citizens to create change through petitions.</p>
+        <div class="social-links d-flex mt-4">
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Petition Creation</a></li>
+          <li><a href="#">Community Engagement</a></li>
+          <li><a href="#">Civic Action</a></li>
+          <li><a href="#">Transparency</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>Tudor Norah street</p>
+        <p>Mombasa, Kenya</p>
+        <p><strong>Phone:</strong> +254 700 000 000</p>
+        <p><strong>Email:</strong> futurelocked52@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <strong>Wajibu</strong>. All Rights Reserved</p>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/frontend/assets/main.js" type="module"></script>
+
+</body>
+
+</html>

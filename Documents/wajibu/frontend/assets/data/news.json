@@ -1,0 +1,49 @@
+[
+    {
+      "id": "1",
+      "title": "Youth-led protest halts illegal evictions",
+      "image": "/frontend/assets/images/news/news-1.png",
+      "date": "2025-04-20",
+      "category": "Civic Action",
+      "content": [
+        "Hundreds of youth rallied peacefully in Nairobi after an exposé on land grabbing in informal settlements. The protest led to a temporary halt on all evictions.",
+        "Organized via Wajibu’s forum and backed by civic educators, it is a powerful example of informed civic action.",
+        "\"We had evidence and civic knowledge. That’s power.\" — Eric Kamau, protest leader."
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Community budget tracker exposes misuse of CDF funds",
+      "image": "/frontend/assets/img/news/news-2.png",
+      "date": "2025-04-15",
+      "category": "Budget Transparency",
+      "content": [
+        "Using Wajibu’s budget scorecard, a local watchdog group in Machakos uncovered discrepancies in Constituency Development Fund allocations.",
+        "They filed an official complaint with the Ethics and Anti-Corruption Commission.",
+        "The MP has since responded and promised a public audit."
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Civic education workshop transforms a village council",
+      "image": "/frontend/assets/img/news/news-3.png",
+      "date": "2025-03-30",
+      "category": "Civic Education",
+      "content": [
+        "A training organized through Wajibu’s civic education portal empowered women in Kwale to demand inclusion in local council decisions.",
+        "Five new community members — four of them women — were recently added to the public participation committee."
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Petition against unsafe road designs gains traction",
+      "image": "/frontend/assets/img/news/news-4.png",
+      "date": "2025-04-10",
+      "category": "Petitions",
+      "content": [
+        "A petition on Wajibu calling for redesigning a notorious road junction in Eldoret has gathered 12,000+ signatures.",
+        "The county government has agreed to conduct a site visit and consult locals."
+      ]
+    }
+  ]
+  

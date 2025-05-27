@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Admin Dashboard - Wajibu</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/frontend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/frontend/assets/style.css" rel="stylesheet">
+</head>
+
+<body class="admin-dashboard-page">
+
+  <header class="bg-dark text-white p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h3">Admin Dashboard</h1>
+      <a href="log-out.html" class="btn btn-danger">Log Out</a>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <!-- News Section -->
+    <section id="news-section" class="mb-5">
+      <h2>Manage News</h2>
+      <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addNewsModal">Add News</button>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Content</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="newsTable">
+            <!-- News items will be dynamically loaded here -->
+            <!-- Example row -->
+            <tr>
+              <td>Sample News Title</td>
+              <td>Category</td>
+              <td>Sample content...</td>
+              <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteNews('newsId')">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Audit Comments Section -->
+    <section id="audit-comments-section" class="mb-5">
+      <h2>Manage Audit Comments</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Comment</th>
+              <th>User</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="commentsTable">
+            <!-- Comments will be dynamically loaded here -->
+            <!-- Example row -->
+            <tr>
+              <td>Sample comment...</td>
+              <td>John Doe</td>
+              <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteComment('commentId')">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Issues Section -->
+    <section id="issues-section">
+      <h2>Manage Issues</h2>
+      <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addIssueModal">Add Issue</button>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="issuesTable">
+            <!-- Issues will be dynamically loaded here -->
+            <!-- Example row -->
+            <tr>
+              <td>Sample Issue Title</td>
+              <td>Sample issue description...</td>
+              <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteIssue('issueId')">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+<!-- Add News Modal -->
+<div class="modal fade" id="addNewsModal" tabindex="-1" aria-labelledby="addNewsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addNewsModalLabel">Add News</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addNewsForm" class="d-flex flex-column">
+          <div class="mb-3">
+            <label for="newsTitle" class="form-label">Title</label>
+            <input type="text" id="newsTitle" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="newsCategory" class="form-label">Category</label>
+            <input type="text" id="newsCategory" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="newsContent" class="form-label">Content</label>
+            <textarea id="newsContent" class="form-control" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Add News</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Issue Modal -->
+<div class="modal fade" id="addIssueModal" tabindex="-1" aria-labelledby="addIssueModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addIssueModalLabel">Add Issue</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addIssueForm" class="d-flex flex-column">
+          <div class="mb-3">
+            <label for="issueTitle" class="form-label">Title</label>
+            <input type="text" id="issueTitle" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="issueDescription" class="form-label">Description</label>
+            <textarea id="issueDescription" class="form-control" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Add Issue</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="/frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/frontend/assets/admin.js"></script>
+</body>
+
+</html>
